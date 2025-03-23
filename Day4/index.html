@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: white;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        .card {
+            background: pink;
+            padding: 20px;
+            border-radius: 10px;
+            /* text-align: center; */
+            width: 300px;
+            height: 400px;
+            border: 2px solid black;
+        }
+        .card h1 {
+            font-size: 20px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="infoContainer"></div>
+
+    <script>
+        const users = [
+            { Name: "Sweta Niroula", Address: "Dharan",Age:23 },
+            { Name: "Siwani Dahal", Address: "Kathmandu",Age:22},
+            { Name: "Deepa Ghimire", Address: "Pokhara",Age:23},
+            { Name: "Ashim Ghimire", Address: "Itahari",Age:22},
+        ];
+
+        const infoContainer = document.getElementById("infoContainer");
+
+        // Using map function to create cards
+        infoContainer.innerHTML = users.map(user => `
+            <div class="card">
+ 
+                <h1>Name: ${user.Name}</h1>
+                <h1>Address: ${user.Address}</h1>
+            </div>
+        `).join('');
+    </script>
+</body>
+</html>
